@@ -1,7 +1,8 @@
 from setuptools import setup, Extension
 
-setup(name='epeg-cffi',
-    version="0.01",
+setup(
+    name='epeg-cffi',
+    version="0.02",
     description=(
         "Insanely fast JPEG/ JPG thumbnail scaling with the minimum fuss and "
         "CPU overhead. It makes use of libjpeg features of being able to load "
@@ -15,9 +16,10 @@ setup(name='epeg-cffi',
     py_modules=['epeg'],
     ext_modules=[
         Extension('_epeg',
-            include_dirs = ['./src'],
-            libraries = ['jpeg'],
-            sources = ['src/epeg.c']),
+            include_dirs=['./src'],
+            libraries=['jpeg'],
+            depends=['./src/epeg_private.h', './src/Epeg.h'],
+            sources=['src/epeg.c']),
     ],
     install_requires=['cffi >= 0.8.1'],
 )
