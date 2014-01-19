@@ -36,7 +36,7 @@ Usage
 
 Benchmarks
 ==========
-Source image was a 3
+Source image was a 4320x3240 pixel 8bit RGB JPEG image.
 
 Wand
 ----
