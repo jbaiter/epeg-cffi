@@ -36,13 +36,14 @@ Usage
 
 Benchmarks
 ==========
+Source image was a 3
 
 Wand
 ----
 ::
 
     In [1]: from wand.image import Image
-    In [2]: %timeit Image(filename='/tmp/007.jpg'); img.sample(800, 600); _ = img.make_blob('jpeg')
+    In [2]: %timeit img = Image(filename='test.jpg'); img.sample(800, 600); _ = img.make_blob('jpeg')
     1 loops, best of 3: 264 ms per loop
 
 PIL/Pillow
@@ -50,7 +51,7 @@ PIL/Pillow
 ::
 
     In [1]: from PIL import Image
-    In [2]: %timeit Image.open('/tmp/007.jpg').resize((800, 600)).save('/tmp/foo_thumb.jpg')
+    In [2]: %timeit Image.open('test.jpg').resize((800, 600)).save('test_thumb.jpg')
     1 loops, best of 3: 234 ms per loop
 
 epeg
@@ -58,6 +59,6 @@ epeg
 ::
 
     In [1]: import epeg
-    In [2]: %timeit epeg.scale_image('/tmp/007.jpg', 800, 600)
+    In [2]: %timeit epeg.scale_image('test.jpg', 800, 600)
     10 loops, best of 3: 101 ms per loop
 
