@@ -1,3 +1,11 @@
+==========
+DEPRECATED
+==========
+
+This package has been deprecated. Please use
+`jpegtran-cffi <http://github.com/jbaiter/jpegtran-cffi>`_ instead, it includes
+these epeg bindings as well as more features like cropping and rotation.
+
 Description
 ===========
     An IMMENSELY FAST JPEG thumbnailer library API.
